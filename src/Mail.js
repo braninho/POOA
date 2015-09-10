@@ -20,8 +20,16 @@ Contact = (function (self) {
            return address;
         };
 
+        this.set_address = function (attr_address) {
+           address = attr_address;
+        };
+
         this.category = function () {
             return category;
+        };
+
+        this.set_category = function (attr_category) {
+           category = attr_category;
         };
 
         var process = function ()

@@ -18,7 +18,11 @@ Contact = (function (self) {
         var lastname;
         var mails = [];
         var phones = [];
+        var id;
 
+        this.id = function () {
+            return id;
+        };
 
         this.gender = function () {
            return gender;
@@ -67,6 +71,11 @@ Contact = (function (self) {
             gender = attr_gender;
             firstname = attr_firstname;
             lastname = attr_lastname;
+            id ='xxxx-xxxx-xxxx-xxxx-xxxx'.replace (/x/g , function ( c ) {
+                var r = Math.random () *16|0 , v = c == 'x' ? r : ( r&0x3|0x8 );
+
+                return v.toString(16);
+            });
         };
 
         init(attr_gender, attr_firstname, attr_lastname);

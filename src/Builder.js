@@ -28,6 +28,14 @@ Contact = (function (self) {
 
             return contact;
         };
+
+        this.createContactWithTag = function (attr_gender, attr_firstname, attr_lastname, attr_tag){
+            var contact = new Contact.Contact(attr_gender, attr_firstname, attr_lastname);
+
+            contact.set_tag(attr_tag);
+
+            return contact;
+        };
     };
 
     return self;

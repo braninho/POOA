@@ -26,12 +26,24 @@ Contact = (function (self) {
            return number;
         };
 
+        this.set_number = function (attr_number) {
+           number = attr_number;
+        };
+
         this.category = function () {
             return category;
         };
 
+        this.set_category = function (attr_category) {
+           category = attr_category;
+        };
+
         this.type = function () {
             return type;
+        };
+
+        this.set_type = function (attr_type) {
+           type = attr_type;
         };
 
         var process = function ()

@@ -19,6 +19,8 @@ Contact = (function (self) {
         var mails = [];
         var phones = [];
         var id;
+        var cache;
+        var tag;
 
         this.id = function () {
             return id;
@@ -64,8 +66,32 @@ Contact = (function (self) {
             phones.push(attr_number);
         };
 
+        this.cache = function () {
+           return cache;
+        };
+
+        this.tag = function () {
+           return tag;
+        };
+
+        this.set_tag = function (attr_tag) {
+           tag = attr_tag;
+        };
+
         var process = function ()
         { };
+
+        this.register = function (observeur) {
+            cache = observeur;
+        };
+
+        this.notify = function () {
+           if (cache !== null) {
+               cache.update(this);
+           }
+        };
+
+
 
         var init = function (attr_gender, attr_firstname, attr_lastname) {
             gender = attr_gender;

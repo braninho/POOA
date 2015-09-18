@@ -73,6 +73,10 @@ Contact = (function (self) {
                 }
             }
         };
+
+        this.search = function (attr_strategy) {
+            return attr_strategy.search(contacts);
+        };
     };
 
     var pInstance = null;

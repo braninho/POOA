@@ -29,11 +29,18 @@ Contact = (function (self) {
             return contact;
         };
 
-        this.createContactWithTag = function (attr_gender, attr_firstname, attr_lastname, attr_tag){
+        this.createContactWithTag = function (attr_gender, attr_firstname, attr_lastname, attr_tag) {
             var contact = new Contact.Contact(attr_gender, attr_firstname, attr_lastname);
 
-            contact.set_tag(attr_tag);
+            contact.set_Tag(attr_tag);
 
+            return contact;
+        };
+
+        this.createContactFromJSON = function (json) {
+            var contact = new Contact.Contact(json._gender, json._firstname, json._lastname);
+            contact.set_Tag(json._tag);
+            contact.set_id(json._id);
             return contact;
         };
     };

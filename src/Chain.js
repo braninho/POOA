@@ -10,7 +10,7 @@ Contact = (function (self) {
     self.Chain = function (attr_handler) {
 
         this.processRequest = function (attr_request) {
-
+            attr_handler.processRequest(attr_request);
         };
     };
 

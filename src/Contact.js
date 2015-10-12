@@ -26,6 +26,10 @@ Contact = (function (self) {
             return id;
         };
 
+        this.set_id = function (attr_id) {
+           id = attr_id;
+        };
+
         this.gender = function () {
            return gender;
         };
@@ -74,7 +78,7 @@ Contact = (function (self) {
            return tag;
         };
 
-        this.set_tag = function (attr_tag) {
+        this.set_Tag = function (attr_tag) {
            tag = attr_tag;
         };
 
@@ -91,7 +95,15 @@ Contact = (function (self) {
            }
         };
 
-
+        this.toObject = function () {
+            return{
+                _firstname : firstname,
+                _lastname : lastname,
+                _gender : gender,
+                _id : id,
+                _tag : tag
+            };
+        };
 
         var init = function (attr_gender, attr_firstname, attr_lastname) {
             gender = attr_gender;

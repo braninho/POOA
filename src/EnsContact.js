@@ -10,6 +10,10 @@ Contact = (function (self) {
     var EnsContact = function () {
         var contacts = [];
 
+        this.getListeContacts = function () {
+           return contacts;
+        };
+
         this.clear = function () {
             while (contacts.length !=0) {
                 contacts.pop();
@@ -76,6 +80,10 @@ Contact = (function (self) {
 
         this.search = function (attr_strategy) {
             return attr_strategy.search(contacts);
+        };
+
+        this.iterator = function () {
+            return new Contact.Iterator(contacts);
         };
     };
 

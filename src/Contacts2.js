@@ -10,6 +10,10 @@ Contact = (function (self) {
     self.Contacts2 = function () {
             var contacts = [];
 
+            this.getListe = function () {
+                return contacts[0];
+            };
+
             this.clear = function () {
                 while (contacts.length !=0) {
                     contacts.pop();
@@ -20,7 +24,6 @@ Contact = (function (self) {
 
             this.add = function (attr_contact) {
                 contacts.push(attr_contact);
-
             };
 
             this.get = function (attr_id) {
